@@ -27,7 +27,7 @@ FROM oven/bun:latest
 WORKDIR /app
 
 # Copy deps + lockfile
-COPY --from=builder /app/bun.lockb ./
+COPY --from=builder /app/bun.lock ./
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/tsconfig.json ./
 RUN bun install --production
