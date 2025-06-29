@@ -6,7 +6,7 @@ FROM oven/bun:latest AS builder
 WORKDIR /app
 
 # Copy and install backend deps
-COPY bun.lockb package.json tsconfig.json ./
+COPY bun.lock package.json tsconfig.json ./
 RUN bun install
 
 # Copy frontend + backend code
