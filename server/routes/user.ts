@@ -30,10 +30,11 @@ export const userRoutes = new Hono()
     const user = await db
       .insert(UserTable)
       .values({ ...data })
-      .returning();
-      
+      .returning()
+      .then((res) => res[0]); // otherwise it returns an array
+
     return c.json({ user });
   })
-  .put("/", (c) => {
+  .delete(`/:id${numberRegex}`, (c) => {
     return c.json({ users: [] });
   });

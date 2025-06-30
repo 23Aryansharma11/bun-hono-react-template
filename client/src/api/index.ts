@@ -9,7 +9,7 @@ export const api = client.api;
 // Get something
 /* 
 async function getSomething(){
-const result = await api.user.$get();
+const res = await api.user.$get();
 
 if(!res.ok){
 throw new Error("server error")
@@ -21,7 +21,7 @@ message: "Message",
 data: [] | {},
 status: 200 
 }
-return data.data
+return data
 } 
 
 const {data, isPending, error, isFetching} = useQuery({queryKey: ["Some query key"], queryFn: getSomething})
@@ -32,4 +32,9 @@ const {data, isPending, error, isFetching} = useQuery({queryKey: ["Some query ke
 // Post something
 /*
 api.user.$post({json: value})
+*/
+
+// Delete
+/*
+api.user[":id{[0-9]+}"].$delete({param:{id: id.toString()}})
 */
