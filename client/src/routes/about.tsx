@@ -23,7 +23,6 @@ function About() {
       console.log("Submitted:", value);
       alert("Form submitted successfully!");
     },
-
   });
 
   return (
