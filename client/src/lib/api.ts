@@ -6,7 +6,25 @@ const client = hc<ApiRoutes>("/");
 export const api = client.api;
 
 // Example usage
-// get req 
-// api.user.$get();
+// Get something
+/* 
+async function getSomething(){
+const result = await api.user.$get();
 
-/* */
+if(!res.ok){
+throw new Error("server error")
+}
+
+const data = await res.json();
+// data={
+message: "Message",
+data: [] | {},
+status: 200 
+}
+return data.data
+} 
+
+const {data, isPending, error, isFetching} = useQuery({queryKey: ["Some query key"], queryFn: getSomething})
+
+// isFetching is when it refetches
+*/
