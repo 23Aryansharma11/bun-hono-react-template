@@ -1,8 +1,15 @@
 import app from "./app";
+import { env } from "./lib/env";
 
-const port = process.env.PORT || 3000; // Does that by default tho
+const PORT = Number(env.PORT);
+
+if (env.NODE_ENV == "development") {
+  console.log(`Server running on http://localhost:${PORT}`);
+} else {
+  console.log("Server running", new Date().toUTCString());
+}
 
 Bun.serve({
-  port,
+  port: PORT,
   fetch: app.fetch,
 });
