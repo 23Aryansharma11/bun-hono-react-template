@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+/* Doesnt let user overscroll */
+html {
+  overscroll-behavior: none;
+}
