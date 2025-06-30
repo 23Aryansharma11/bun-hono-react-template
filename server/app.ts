@@ -7,10 +7,12 @@ const app = new Hono();
 
 app.use(logger());
 
-app.basePath("/api").route("/user", userRoutes);
+const apiRoutes = app.basePath("/api").route("/user", userRoutes);
 
 // Serve static react app
 app.use("*", serveStatic({ root: "./client/dist" }));
 app.use("*", serveStatic({ path: "./client/dist/index.html" }));
 
 export default app;
+// Hono RPC
+export type ApiRoutes = typeof apiRoutes;
