@@ -28,3 +28,8 @@ const {data, isPending, error, isFetching} = useQuery({queryKey: ["Some query ke
 
 // isFetching is when it refetches
 */
+
+// Post something
+/*
+api.user.$post({json: value})
+*/
